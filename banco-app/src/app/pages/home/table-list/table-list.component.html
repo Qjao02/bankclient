@@ -4,58 +4,26 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" data-background-color="red">
-                        <h4 class="title">Simple Table</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Client Table</h4>
+                        <p class="category">A list of Bank's Clients (both Fisical or Juridice)</p>
                     </div>
                     <div class="card-content table-responsive">
                         <table class="table">
                             <thead class="text-danger">
                                 <tr>
                                     <th>Name</th>
-                                    <th>Country</th>
-                                    <th>City</th>
-                                    <th>Salary</th>
+                                    <th>endereco</th>
+                                    <th>Data de Cadastro</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Dakota Rice</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
-                                    <td class="text-danger">$36,738</td>
-                                </tr>
-                                <tr>
-                                    <td>Minerva Hooper</td>
-                                    <td>Curaçao</td>
-                                    <td>Sinaai-Waas</td>
-                                    <td class="text-danger">$23,789</td>
-                                </tr>
-                                <tr>
-                                    <td>Sage Rodriguez</td>
-                                    <td>Netherlands</td>
-                                    <td>Baileux</td>
-                                    <td class="text-danger">$56,142</td>
-                                </tr>
-                                <tr>
-                                    <td>Philip Chaney</td>
-                                    <td>Korea, South</td>
-                                    <td>Overland Park</td>
-                                    <td class="text-danger">$38,735</td>
-                                </tr>
-                                <tr>
-                                    <td>Doris Greene</td>
-                                    <td>Malawi</td>
-                                    <td>Feldkirchen in Kärnten</td>
-                                    <td class="text-danger">$63,542</td>
-                                </tr>
-                                <tr>
-                                    <td>Mason Porter</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td class="text-danger">$78,615</td>
+                                <tr *ngFor = "let post of clientsArray">
+                                    <td>{{post.nome}}</td>
+                                    <td>{{post.endereco}}</td>
+                                    <td>{{post.cadastroDatetime}}</td>
                                 </tr>
                             </tbody>
-                        </table>
+                            </table>
 
                     </div>
                 </div>
@@ -73,17 +41,15 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Salary</th>
-                                    <th>Country</th>
-                                    <th>City</th>
+                                    <th>Adress</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
+                                <tr *ngFor = "let post of _postArray">
+                                    <td>{{post.id}}</td>
+                                    <td>{{post.name}}</td>
+                                    <td>{{post.adress}}</td>
+                                    <td>{{post.date}}</td>
                                     <td>Oud-Turnhout</td>
                                 </tr>
                                 <tr>

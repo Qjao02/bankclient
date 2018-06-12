@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app.routing';
 import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+
+import {ClienteInterface} from "./cliente-interface";
 
 @NgModule({
   declarations: [
@@ -18,9 +21,9 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     RouterModule,
-
     AppRoutingModule,
     PagesModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

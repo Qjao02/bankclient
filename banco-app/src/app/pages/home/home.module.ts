@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgForOf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { ComponentsModule } from '../../components/components.module';
@@ -15,15 +15,19 @@ import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { WelcomeHomeComponent } from './welcome-home/welcome-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableListPipe } from './table-list/table-list.pipe';
 
 @NgModule({
   imports: [
-    CommonModule,
+    [CommonModule],
     RouterModule,
     
     ComponentsModule,
     HomeRoutingModule,
     RouterModule,
+
+    HttpClientModule,
   ],
   declarations: [
     HomeComponent, 
@@ -34,7 +38,10 @@ import { WelcomeHomeComponent } from './welcome-home/welcome-home.component';
     IconsComponent, 
     MapsComponent, 
     NotificationsComponent, 
-    UpgradeComponent, WelcomeHomeComponent,
-  ]
+    UpgradeComponent, WelcomeHomeComponent, TableListPipe,
+  ],
+
+  providers: [],
+  bootstrap: [HomeComponent]
 })
 export class HomeModule { }
