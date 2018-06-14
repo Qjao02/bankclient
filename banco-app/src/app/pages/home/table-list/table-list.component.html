@@ -1,11 +1,27 @@
 <div class="main-content">
+
+
     <div class="container-fluid">
+
+        <div class="container-fluid pull-left">
+            <form classclass="form-group" role="search">
+                <div class="form-group form-black is-empty">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                        <i class="material-icons">search</i>
+                        <div class="ripple-container"></div>
+                    </button>
+
+                </div>
+            </form>
+        </div>
         <div class="row">
             <div class="col-md-12">
+
                 <div class="card">
                     <div class="card-header" data-background-color="red">
-                        <h4 class="title">Client Table</h4>
-                        <p class="category">A list of Bank's Clients (both Fisical or Juridice)</p>
+                        <h4 class="title">Lista Clientes</h4>
+                        <p class="category">Lista de clientes(físicos e jurídicos) </p>
                     </div>
                     <div class="card-content table-responsive">
                         <table class="table">
@@ -17,13 +33,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor = "let post of clientsArray">
+                                <tr *ngFor="let post of clientsArray">
                                     <td>{{post.nome}}</td>
                                     <td>{{post.endereco}}</td>
                                     <td>{{post.cadastroDatetime}}</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-danger pull-left"><i class="material-icons">update</i></button>
+                                        <button type="submit" class="btn btn-danger pull-left"><i class="material-icons">delete</i></button>
+                                    </td>
                                 </tr>
                             </tbody>
-                            </table>
+                        </table>
 
                     </div>
                 </div>
@@ -45,7 +65,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor = "let post of _postArray">
+                                <tr *ngFor="let post of _postArray">
                                     <td>{{post.id}}</td>
                                     <td>{{post.name}}</td>
                                     <td>{{post.adress}}</td>
