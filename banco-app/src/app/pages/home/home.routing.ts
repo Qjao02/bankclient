@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,17 +12,25 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { NovoClienteFormComponent } from './novo-cliente-form/novo-cliente-form.component';
+import { TabbleListFuncionarioComponent } from './tabble-list-funcionario/tabble-list-funcionario.component'
+import { NovoFuncionarioFormComponent } from './novo-funcionario-form/novo-funcionario-form.component';
+import { TabbleListAdministradorComponent } from './tabble-list-administrador/tabble-list-administrador.component';
+import { NovoAdministradorFormComponent } from './novo-administrador-form/novo-administrador-form.component';
 
 
 const routes: Routes =[
   { path: 'home',  component: HomeComponent,
       children: [
       { path: 'dashboard',      component: DashboardComponent },
-      { path: 'user-profile',   component: UserProfileComponent },
+      { path: 'novo-cliente-form',   component: NovoClienteFormComponent },
       { path: 'table-list',     component: TableListComponent },
       { path: 'typography',     component: TypographyComponent },
       { path: 'icons',          component: IconsComponent },
-      { path: 'maps',           component: MapsComponent },
+      { path: 'novo-funcionario-form',           component: NovoFuncionarioFormComponent },
+      { path: 'table-list-funcionario',           component: TabbleListFuncionarioComponent },
+      { path: 'novo-administrador-form',           component: NovoAdministradorFormComponent },
+      { path: 'table-list-administrador',         component: TabbleListAdministradorComponent}, 
       { path: 'notifications',  component: NotificationsComponent },
       { path: 'upgrade',        component: UpgradeComponent },
     ]

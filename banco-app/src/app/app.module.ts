@@ -11,10 +11,12 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 
 import {ClienteInterface} from "./cliente-interface";
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,9 @@ import {ClienteInterface} from "./cliente-interface";
     RouterModule,
     AppRoutingModule,
     PagesModule,
+    NgbModule.forRoot(),
+    NgxPaginationModule
+
     
   ],
   providers: [],

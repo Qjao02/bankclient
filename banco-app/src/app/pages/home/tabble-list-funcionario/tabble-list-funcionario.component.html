@@ -1,0 +1,101 @@
+<div class="main-content">
+
+  <div class="container-fluid">
+
+    <div class="container-fluid pull-left">
+      <form classclass="form-group" role="search">
+        <div class="form-group form-black is-empty">
+          <input type="text" class="form-control" placeholder="Search">
+          <button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+
+        <div #cardTable class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Lista Funcioarios</h4>
+            <p class="category">Lista de funcionarios da Agencia </p>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table  table-striped">
+              <thead class="text-danger">
+                <tr>
+                  <th>Login</th>
+                  <th>Senha</th>
+                  <th>Cadastrado por</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let post of funcionarioArray ">
+
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.nome" value={{post.login}} readonly/>
+                  </td>
+
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.login" value={{post.senha}} readonly/>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.senha" value={{post.adm_cadastrou}} readonly/>
+                  </td>
+
+                  <td>
+                    <button class="btn btn-danger pull-left" type="submit" (click)="onClick(post,updateCliente)">
+                      <i class="material-icons">update</i>
+                    </button>
+
+                    <button class="btn btn-danger pull-left" (click)=deleteFuncionario(post)>
+                      <i class="material-icons">delete</i>
+                    </button>
+
+                  </td>
+
+
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div #updateCliente class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Novo Cliente</h4>
+            <p class="category">Complete os campos </p>
+            {{model.nome}}
+          </div>
+          <div class="card-content">
+            <form #novoCliente="ngForm">
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <input [(ngModel)]="model.login" name="login" type="text" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <input [(ngModel)]="model.senha" name="senha" type="text" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger pull-right" (click)="putFuncionario(model,cardTable)">Atualizar Funcionario</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

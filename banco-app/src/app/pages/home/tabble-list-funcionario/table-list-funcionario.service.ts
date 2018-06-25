@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
-import { ClienteInterface } from "../../../cliente-interface";
+import { FuncionarioInterface } from "../../../funcionario-interface";
 import { HttpClient } from '@angular/common/http'
 import { HttpHeaders } from '@angular/common/http';
-import { Cliente } from './cliente'
+import { Funcionario } from './funcionario'
 const httpOptions = {
   headers: new HttpHeaders({
     'Allow': 'GET, POST, HEAD, OPTIONS',
@@ -18,19 +18,20 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class TableListService {
-  private postsURL = "http://localhost:8000/api/v1/Clientes/";
+export class TableListFuncionarioService {
+  private postsURL = "http://localhost:8000/api/v1/Funcionarios/";
   constructor(private http: HttpClient) { }
 
-  getClients(): Observable<ClienteInterface[]> {
-    return this.http.get<ClienteInterface[]>(this.postsURL);
+  getFuncionario(): Observable<FuncionarioInterface[]> {
+    return this.http.get<FuncionarioInterface[]>(this.postsURL);
   }
 
 
 
-  putCliente(cliente: Cliente, el) {
-    var stringrequest = this.postsURL.concat(cliente.id.toString())
-    this.http.put(stringrequest, cliente).subscribe(
+  putFuncionario(funcionario: Funcionario, el) {
+    var stringrequest = this.postsURL.concat(funcionario.id.toString())
+    
+    this.http.put(stringrequest, funcionario).subscribe(
       (data: any) => {
         console.log(data)
       }
@@ -41,8 +42,8 @@ export class TableListService {
       
     }
 
-    deleteCliente(cliente:Cliente){
-      var stringrequest = this.postsURL.concat(cliente.id.toString())
+    deleteFuncionario(funcionario:Funcionario){
+      var stringrequest = this.postsURL.concat(funcionario.id.toString())
       console.log(stringrequest)
       this.http.delete(stringrequest).subscribe(
         (data : any)=> {

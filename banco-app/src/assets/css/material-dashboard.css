@@ -1892,7 +1892,7 @@ output {
 }
 .form-control::-moz-placeholder,
 .form-group .form-control::-moz-placeholder {
-  color: #AAAAAA;
+  color: black;
   font-weight: 400;
 }
 .form-control:-ms-input-placeholder,
@@ -1902,8 +1902,8 @@ output {
 }
 .form-control::-webkit-input-placeholder,
 .form-group .form-control::-webkit-input-placeholder {
-  color: #AAAAAA;
-  font-weight: 400;
+  color: black;
+  opacity: 1;
 }
 .form-control[readonly], .form-control[disabled], fieldset[disabled] .form-control,
 .form-group .form-control[readonly],

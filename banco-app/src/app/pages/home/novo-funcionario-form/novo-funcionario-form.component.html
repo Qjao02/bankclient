@@ -1,0 +1,38 @@
+<div class="main-content">
+  <div #updateCliente class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Novo Funcionario</h4>
+            <p class="category">Complete os campos </p>
+            {{model.nome}}
+          </div>
+          <div class="card-content">
+            <form #novoCliente="ngForm">
+              <div class="row">
+
+                <div class="col-md-3">
+                  <div class="form-group form-black label-floating is-empty">
+                    <input [(ngModel)]="model.login" name="login" placeholder="login" type="text" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <input [(ngModel)]="model.senha" name="senha"  placeholder="senha" type="text" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group form-black label-floating is-empty">
+                    <input [(ngModel)]="model.adm_cadastrou" name="funcionario_cadastrou"  placeholder="cadastrado por" type="text" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger pull-right" (click)="onClick(model)">Cadastrar Funcionario</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

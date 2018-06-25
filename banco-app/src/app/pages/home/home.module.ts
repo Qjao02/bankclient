@@ -17,7 +17,12 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { WelcomeHomeComponent } from './welcome-home/welcome-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableListPipe } from './table-list/table-list.pipe';
-import { PopupClienteComponent } from './popup-cliente/popup-cliente.component';
+import { FormsModule} from "@angular/forms";
+import { NovoClienteFormComponent } from './novo-cliente-form/novo-cliente-form.component';
+import { TabbleListFuncionarioComponent } from './tabble-list-funcionario/tabble-list-funcionario.component';
+import { TabbleListAdministradorComponent } from './tabble-list-administrador/tabble-list-administrador.component';
+import { NovoFuncionarioFormComponent } from './novo-funcionario-form/novo-funcionario-form.component';
+import { NovoAdministradorFormComponent } from './novo-administrador-form/novo-administrador-form.component';
 
 @NgModule({
   imports: [
@@ -29,6 +34,7 @@ import { PopupClienteComponent } from './popup-cliente/popup-cliente.component';
     RouterModule,
 
     HttpClientModule,
+    FormsModule,
   ],
   declarations: [
     HomeComponent, 
@@ -39,7 +45,7 @@ import { PopupClienteComponent } from './popup-cliente/popup-cliente.component';
     IconsComponent, 
     MapsComponent, 
     NotificationsComponent, 
-    UpgradeComponent, WelcomeHomeComponent, TableListPipe, PopupClienteComponent,
+    UpgradeComponent, WelcomeHomeComponent, TableListPipe, NovoClienteFormComponent, TabbleListFuncionarioComponent, TabbleListAdministradorComponent, NovoFuncionarioFormComponent, NovoAdministradorFormComponent,  
   ],
 
   providers: [],

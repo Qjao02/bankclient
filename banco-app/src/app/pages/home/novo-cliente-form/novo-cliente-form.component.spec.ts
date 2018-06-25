@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopupClienteComponent } from './popup-cliente.component';
+import { NovoClienteFormComponent } from './novo-cliente-form.component';
 
-describe('PopupClienteComponent', () => {
-  let component: PopupClienteComponent;
-  let fixture: ComponentFixture<PopupClienteComponent>;
+describe('NovoClienteFormComponent', () => {
+  let component: NovoClienteFormComponent;
+  let fixture: ComponentFixture<NovoClienteFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopupClienteComponent ]
+      declarations: [ NovoClienteFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PopupClienteComponent);
+    fixture = TestBed.createComponent(NovoClienteFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
