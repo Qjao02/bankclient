@@ -1,6 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
@@ -17,22 +17,24 @@ import { TabbleListFuncionarioComponent } from './tabble-list-funcionario/tabble
 import { NovoFuncionarioFormComponent } from './novo-funcionario-form/novo-funcionario-form.component';
 import { TabbleListAdministradorComponent } from './tabble-list-administrador/tabble-list-administrador.component';
 import { NovoAdministradorFormComponent } from './novo-administrador-form/novo-administrador-form.component';
+import { RelatorioSimplesComponent } from './relatorio-simples/relatorio-simples.component';
 
-
-const routes: Routes =[
-  { path: 'home',  component: HomeComponent,
-      children: [
-      { path: 'dashboard',      component: DashboardComponent },
-      { path: 'novo-cliente-form',   component: NovoClienteFormComponent },
-      { path: 'table-list',     component: TableListComponent },
-      { path: 'typography',     component: TypographyComponent },
-      { path: 'icons',          component: IconsComponent },
-      { path: 'novo-funcionario-form',           component: NovoFuncionarioFormComponent },
-      { path: 'table-list-funcionario',           component: TabbleListFuncionarioComponent },
-      { path: 'novo-administrador-form',           component: NovoAdministradorFormComponent },
-      { path: 'table-list-administrador',         component: TabbleListAdministradorComponent}, 
-      { path: 'notifications',  component: NotificationsComponent },
-      { path: 'upgrade',        component: UpgradeComponent },
+const routes: Routes = [
+  {
+    path: 'home', component: HomeComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'novo-cliente-form', component: NovoClienteFormComponent },
+      { path: 'table-list', component: TableListComponent },
+      { path: 'typography', component: TypographyComponent },
+      { path: 'icons', component: IconsComponent },
+      { path: 'novo-funcionario-form', component: NovoFuncionarioFormComponent },
+      { path: 'table-list-funcionario', component: TabbleListFuncionarioComponent },
+      { path: 'novo-administrador-form', component: NovoAdministradorFormComponent },
+      { path: 'table-list-administrador', component: TabbleListAdministradorComponent },
+      { path: 'relatorio-simples', component: RelatorioSimplesComponent },
+      { path: 'notifications', component: NotificationsComponent },
+      { path: 'upgrade', component: UpgradeComponent },
     ]
   }
 ];

@@ -4,6 +4,8 @@ import { ClienteInterface } from "../../../cliente-interface";
 import { HttpClient } from '@angular/common/http'
 import { HttpHeaders } from '@angular/common/http';
 import { Cliente } from './cliente'
+import { Total } from '../../../total';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Allow': 'GET, POST, HEAD, OPTIONS',
@@ -26,7 +28,10 @@ export class TableListService {
     return this.http.get<ClienteInterface[]>(this.postsURL);
   }
 
-
+  getTotalCliente() : Observable<Total[]>{
+    
+    return this.http.get<Total[]>('http://localhost:8000/api/v1/totalClientes/')    
+  }
 
   putCliente(cliente: Cliente, el) {
     var stringrequest = this.postsURL.concat(cliente.id.toString())
@@ -55,6 +60,7 @@ export class TableListService {
 
 
 
+  
 
 
 

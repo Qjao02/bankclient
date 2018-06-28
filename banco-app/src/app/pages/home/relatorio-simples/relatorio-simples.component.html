@@ -1,0 +1,58 @@
+<div class="main-content">
+
+  <div class="container-fluid">
+
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div #cardTable class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Lista Clientes fisicos</h4>
+            <p class="  category">Lista de clientes consulta feito na VIEW </p>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table  table-striped">
+              <thead class="text-danger">
+                <tr>
+                  <th>Cpf</th>
+                  <th>Nome</th>
+                  <th>rua</th>
+                  <th>cidade</th>
+                  <th>estado</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let post of viewClienteFisicoList ">
+
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.nome" value={{post.nome}} readonly/>
+                  </td>
+
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.cpf" value={{post.cpf}} readonly/>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.rua_mora" value={{post.rua_mora}} readonly/>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.cidade_mora" value={{post.cidade_mora}} readonly/>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" ng-model="post.cidade_mora" value={{post.estado_mora}} readonly/>
+
+                  </td>
+
+
+
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

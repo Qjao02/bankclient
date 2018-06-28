@@ -23,6 +23,7 @@ import { TabbleListFuncionarioComponent } from './tabble-list-funcionario/tabble
 import { TabbleListAdministradorComponent } from './tabble-list-administrador/tabble-list-administrador.component';
 import { NovoFuncionarioFormComponent } from './novo-funcionario-form/novo-funcionario-form.component';
 import { NovoAdministradorFormComponent } from './novo-administrador-form/novo-administrador-form.component';
+import { RelatorioSimplesComponent } from './relatorio-simples/relatorio-simples.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,7 @@ import { NovoAdministradorFormComponent } from './novo-administrador-form/novo-a
     IconsComponent, 
     MapsComponent, 
     NotificationsComponent, 
-    UpgradeComponent, WelcomeHomeComponent, TableListPipe, NovoClienteFormComponent, TabbleListFuncionarioComponent, TabbleListAdministradorComponent, NovoFuncionarioFormComponent, NovoAdministradorFormComponent,  
+    UpgradeComponent, WelcomeHomeComponent, TableListPipe, NovoClienteFormComponent, TabbleListFuncionarioComponent, TabbleListAdministradorComponent, NovoFuncionarioFormComponent, NovoAdministradorFormComponent, RelatorioSimplesComponent,  
   ],
 
   providers: [],

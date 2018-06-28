@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { TableListService } from "./table-list.service"
 import { ClienteInterface } from '../../../cliente-interface';
-import { Cliente} from './Cliente'
+import { Cliente } from './Cliente'
+import { Total } from '../../../total'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { getLocaleDateFormat } from '@angular/common';
 
 @Component({
@@ -15,19 +16,22 @@ import { getLocaleDateFormat } from '@angular/common';
 export class TableListComponent implements OnInit {
 
   public clientsArray = [];
-  public actualCliente : ClienteInterface
+  public actualCliente: ClienteInterface
   model = new Cliente()
-  constructor(private tableListService: TableListService ) { }
+  public totalClienteView  = [];
 
- 
+
+
+  constructor(private tableListService: TableListService) { }
   ngOnInit() {
 
     this.tableListService.getClients().
       subscribe(data => this.clientsArray = data)
 
-  } 
-
-  onClick(cliente : Cliente, el) {
+    this.tableListService.getTotalCliente().
+      subscribe(data => this.totalClienteView = data)
+  }
+  onClick(cliente: Cliente, el) {
     el.scrollIntoView();
     this.model.id = cliente.id
     this.model.nome = cliente.nome
@@ -38,23 +42,24 @@ export class TableListComponent implements OnInit {
     this.model.data_cadastro = '2018-06-24'
   }
 
-  putCliente(cliente:Cliente,el){
-    this.tableListService.putCliente(cliente,el)
+  putCliente(cliente: Cliente, el) {
+    this.tableListService.putCliente(cliente, el)
     this.tableListService.getClients().
       subscribe(data => this.clientsArray = data)
-    
+
   }
 
 
 
-  deleteCliente(cliente:Cliente){
+  deleteCliente(cliente: Cliente) {
     this.tableListService.deleteCliente(cliente)
     this.tableListService.getClients().subscribe(
-      data=>this.clientsArray = data
-    )
+      data => this.clientsArray = data)
 
     //window.location.reload()
   }
- 
+
+
+
 }
 

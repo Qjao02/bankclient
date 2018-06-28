@@ -2,14 +2,10 @@
 
     <div class="container-fluid">
 
-        <div class="container-fluid pull-left">
+        <div  lass="container-fluid pull-left">
             <form classclass="form-group" role="search">
                 <div class="form-group form-black is-empty">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                        <i class="material-icons">search</i>
-                        <div class="ripple-container"></div>
-                    </button>
+                   <h4 class="title">Total Clientes: {{totalClienteView.total}}</h4>
 
                 </div>
             </form>
@@ -37,7 +33,7 @@
                                 <tr *ngFor="let post of clientsArray ">
 
                                     <td>
-                                        <input type="text" class="form-control" ng-model="post.nome" value={{post.nome}} readonly/> 
+                                        <input type="text" class="form-control" ng-model="post.nome" value={{post.nome}} readonly/>
                                     </td>
 
                                     <td>
@@ -57,7 +53,7 @@
                                             <i class="material-icons">update</i>
                                         </button>
 
-                                        <button class="btn btn-danger pull-left" (click) = deleteCliente(post)>
+                                        <button class="btn btn-danger pull-left" (click)=deleteCliente(post)>
                                             <i class="material-icons">delete</i>
                                         </button>
 
